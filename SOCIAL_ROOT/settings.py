@@ -76,7 +76,7 @@ WSGI_APPLICATION = 'SOCIAL_ROOT.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'db',
         'USER': 'postgres',
         'PASSWORD': 'pass1234',
