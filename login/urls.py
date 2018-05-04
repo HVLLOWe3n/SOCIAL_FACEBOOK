@@ -1,6 +1,6 @@
 from django.urls import path
 from login import views
 
-urlpatterns = {
+urlpatterns = [
     path('login/', views.login_function, name='login')
-}
+]
