@@ -8,7 +8,8 @@ def login_function(request):
 
 def get_login_success(request):
     code = request.GET.get('code', None)
-    at = requests.get('https://graph.facebook.com/v3.0/oauth/access_token/?client_id=421333258293431&redirect_uri=https://socialfacebook.herokuapp.com/login_success/&client_secret=bf293ff8dc4d986f79da7f36585b26d7&code={}'.format(code))
+    original_url = 'https://www.facebook.com/v3.0/dialog/oauth?client_id=421333258293431&redirect_uri=https://socialfacebook.herokuapp.com/login_success/&state=manage_pages'
+    at = requests.get('https://graph.facebook.com/v3.0/oauth/access_token?client_id=421333258293431&redirect_uri={}&client_secret=bf293ff8dc4d986f79da7f36585b26d7&code={}'.format(original_url, code))
 
     context = {
         'at_json': at
